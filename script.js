@@ -172,6 +172,53 @@ window.addEventListener('keydown', e => {
     }
 });
 
+// --- Touch Controls for Mobile ---
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+canvas.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+    e.preventDefault(); // Prevent page scrolling
+}, { passive: false });
+
+canvas.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+    e.preventDefault(); // Prevent page scrolling
+}, { passive: false });
+
+function handleSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const swipeThreshold = 30; // Minimum distance for a swipe to be registered
+
+    // Prioritize horizontal swipe
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (Math.abs(deltaX) > swipeThreshold) {
+            if (deltaX > 0) {
+                if (direction.x === 0) direction = { x: 1, y: 0 }; // Right
+            } else {
+                if (direction.x === 0) direction = { x: -1, y: 0 }; // Left
+            }
+        }
+    }
+    // Otherwise, check for vertical swipe
+    else {
+        if (Math.abs(deltaY) > swipeThreshold) {
+            if (deltaY > 0) {
+                if (direction.y === 0) direction = { x: 0, y: 1 }; // Down
+            } else {
+                if (direction.y === 0) direction = { x: 0, y: -1 }; // Up
+            }
+        }
+    }
+}
+
+
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', () => {
     init();
