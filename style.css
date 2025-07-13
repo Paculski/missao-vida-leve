@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* AliceBlue */
+    color: #333;
+}
+
+#game-container {
+    text-align: center;
+    border: 2px solid #add8e6; /* LightBlue */
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #4682b4; /* SteelBlue */
+}
+
+h3 {
+    color: #5f9ea0; /* CadetBlue */
+    margin-top: -10px;
+}
+
+canvas {
+    background-color: #e0ffff; /* LightCyan */
+    border: 1px solid #b0e0e6; /* PowderBlue */
+    border-radius: 10px;
+}
+
+#game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.hidden {
+    display: none;
+}
+
+#start-screen, #game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #4682b4;
+    width: 300px; /* Added width for better layout */
+}
+
+#start-screen h4 {
+    color: #d9534f; /* Reddish for attention */
+    margin-top: 0;
+}
+
+#start-screen p {
+    text-align: left;
+    margin-left: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #5cb85c; /* MediumSeaGreen */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4cae4c; /* Darker Green */
+}
+
+#ctaButton {
+    background-color: #f0ad4e; /* Orange */
+}
+
+#ctaButton:hover {
+    background-color: #ec971f; /* Darker Orange */
+}
+
+#restartButton {
+    background-color: #5bc0de; /* Info Blue */
+}
+
+#restartButton:hover {
+    background-color: #46b8da; /* Darker Info Blue */
+}

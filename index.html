@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão: Vida Leve</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>Missão: Vida Leve</h1>
+        <h3>Como você está se alimentando? Jogue e veja!</h3>
+        
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div id="game-info">
+            <span>Pontuação: <span id="score">0</span></span>
+            <span>Tamanho: <span id="playerSize">10</span></span>
+        </div>
+
+        <div id="start-screen">
+            <h4>PREPARE-SE PARA JOGAR!</h4>
+            <p><b>Comando:</b> Use as <b>SETAS DO TECLADO</b> para mover.</p>
+            <p>🥦 <b>Pegue:</b> para diminuir e pontuar.</p>
+            <p>🍔 <b>Evite:</b> para não crescer.</p>
+            <button id="startButton">▶ JOGAR AGORA!</button>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+            <h2>Fim de Jogo!</h2>
+            <p>Sua pontuação final foi: <span id="finalScore">0</span></p>
+            <p>Na vida real, a jornada não precisa ter "game over". Continue sua missão para uma vida mais leve com um guia completo!</p>
+            <a href="https://sabedoriaonline.com.br/revolucao-pos-bariatrica" target="_blank">
+                <button id="ctaButton">Conheça o Guia Agora!</button>
+            </a>
+            <button id="restartButton">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
